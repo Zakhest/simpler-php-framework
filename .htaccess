@@ -1,0 +1,7 @@
+# Mengaktifkan modul rewrite
+RewriteEngine On
+
+# Mengarahkan semua request ke index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?controller=$1 [L,QSA]
